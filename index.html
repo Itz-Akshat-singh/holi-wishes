@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Holi Wishes</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(270deg, #ff0000, #ff7300, #ffff00, #008000, #0000ff, #4b0082, #ee82ee);
+            background-size: 1400% 1400%;
+            animation: backgroundAnimation 12s ease infinite;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        @keyframes backgroundAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .content {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.5rem;
+        }
+
+        .button {
+            background-color: #ffff00;
+            color: #000;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            transition: transform 0.3s ease;
+            border: 2px solid #ff7300;
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+            background-color: #ff7300;
+            color: #fff;
+        }
+    </style>
+</head>
+<body onload="askName()">
+    <div class="content">
+        <h1 id="greeting">🎨 Happy Holi! 🌈</h1>
+        <p id="personalMessage">May your life be filled with vibrant colors and endless joy. Wishing you a safe and wonderful Holi!</p>
+        <p id="footerMessage"></p>
+        <button class="button" onclick="redirectToImage()">By: Akshat Singh</button>
+    </div>
+
+    <script>
+        function askName() {
+            const userName = prompt("Aapka naam kya hai?");
+            const greetingElement = document.getElementById('greeting');
+            const messageElement = document.getElementById('personalMessage');
+            const footerMessage = document.getElementById('footerMessage');
+
+            if (userName) {
+                greetingElement.innerHTML = `🎨 Happy Holi, ${userName}! 🌈`;
+                messageElement.innerHTML = `${userName}, aapko aur aapke parivaar ko Holi ki hardik shubhkamnayein! 🙏<br><br>
+                "Gulaal ki khushboo, paani ke jharne, <br>
+                Rangon ki barsaat ho har angan mein, <br>
+                Khushi se bhare ho aapke jeevan ke saare pal, <br>
+                Aapko mile har khushi jo aapko ho pyaar se atal." 🌸`;
+                footerMessage.innerHTML = `🌟 Ye shubhkamna Akshat Singh ki taraf se hai! 🌟`;
+            }
+        }
+
+        function redirectToImage() {
+            window.location.href = "https://i.ibb.co/6RJdqKnX/8bdbb4f2-1ec7-4518-b5d2-2aff0a648972.jpg"; // Change this link to your desired photo
+        }
+    </script>
+</body>
+</html>
